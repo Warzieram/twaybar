@@ -42,28 +42,28 @@ The module uses twitch API so will need a configuration step on twitch
 
 ### Step 1: Create a twitch application
 
-Go to https://dev.twitch.tv/console and create an application there
-You can name it whatever you want, you just need to set the OAuth redirection URL to `localhost:[port_of_your_choice]/callback`
-Then you will need to create the `.env` file and paste the content of `.env.example` into it.
+Go to https://dev.twitch.tv/console and create an application there   
+You can name it whatever you want, you just need to set the OAuth redirection URL to `localhost:[port_of_your_choice]/callback`   
+Then you will need to create the `.env` file and paste the content of `.env.example` into it.   
 
 ### Step 2: Set the environment 
 
 Here are the fields to fill in `.env`:
 
-`CLIENT_ID`: The client id of the app you created in the twitch dev console
-`CLIENT_SECRET`: The client secret of the app you created in the twitch dev console (available on the app's page)
-`BROADCASTER_LOGIN`: The login of the broadcaster you want info from (usually the username in lowercase)
+`CLIENT_ID`: The client id of the app you created in the twitch dev console   
+`CLIENT_SECRET`: The client secret of the app you created in the twitch dev console (available on the app's page)   
+`BROADCASTER_LOGIN`: The login of the broadcaster you want info from (usually the username in lowercase)   
 `USER_LOGIN`: Your own login, note that you need the rights to access the informations you'll subscribe to, for example
-if you're banned from a channel you cannot see its chat messages, and you can only see subs of channel that you are a moderator for.
-`PORT`: The port you want to use for the OAuth server (if you don't know just put 8080)
+if you're banned from a channel you cannot see its chat messages, and you can only see subs of channel that you are a moderator for.   
+`PORT`: The port you want to use for the OAuth server (if you don't know just put 8080)    
 
 ### Step 3: Configuration
 
-The `config.json` file is used to chose what events you want to subscribe to :
-`chat` set to `true` will add the last message and its sender username to the text output
-`subs` will add the last sub's username to the tooltip output
-`resubs` will add the last resub's username and its message to  the tooltip output
-`debug` will enable logging off all requests for authorization token and events subscriptions
+The `config.json` file is used to chose what events you want to subscribe to :   
+`chat` set to `true` will add the last message and its sender username to the text output   
+`subs` will add the last sub's username to the tooltip output   
+`resubs` will add the last resub's username and its message to  the tooltip output   
+`debug` will enable logging off all requests for authorization token and events subscriptions   
 
 ### Step 4: Execution
 
@@ -79,7 +79,7 @@ Then the messages should start being displayed in waybar so Enjoy !
 
 ## Troubleshooting
 
-You can set the debug option to `true` in `conf.json` to debug the requests
+You can set the debug option to `true` in `conf.json` to debug the requests   
 The authorization token should refresh automatically when it's expired resulting in the OAuth page opening on startup, but if it doesn't happen you can delete the
 `token.json` file and try again.
 Do not hesitate to open an issue if something goes wrong
